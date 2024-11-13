@@ -1,6 +1,4 @@
-Here's a sample README file for your LinkedIn Profile Fetcher Extension project:
 
-```markdown
 # LinkedIn Profile Fetcher Chrome Extension
 
 ## Overview
@@ -75,6 +73,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [HubSpot API Documentation](https://developers.hubspot.com/docs/api/overview)
 - [LinkedIn API Documentation](https://docs.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api)
 
-```
 
-Feel free to modify the content as necessary to fit your project specifics!
