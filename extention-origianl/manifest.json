@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Fetcher",
+  "description": "Fetch LinkedIn Profile Data",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "identity",
+    "scripting",
+    "tabs"
+],
+  "background.service_worker": {
+    "service_worker": "background.js"
+   
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "http://localhost:3000/*",
+    "https://api.hubapi.com/*"
+  ]
+}

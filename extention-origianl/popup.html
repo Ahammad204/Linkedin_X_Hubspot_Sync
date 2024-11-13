@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Profile Information</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f9fc;
+        color: #333;
+        width: 320px; /* Fixed width */
+        padding: 20px;
+        margin: 0;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border: #357abd;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      h3 {
+        margin-top: 0;
+        font-size: 1.4em;
+        color: #4a90e2;
+        text-align: center;
+      }
+
+      #profile-info label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+
+      #profile-info input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 0.95em;
+        transition: border-color 0.3s;
+      }
+
+      #profile-info input[type="text"]:focus {
+        border-color: #4a90e2;
+        outline: none;
+      }
+      #profile-info textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 12px;
+        transition: border-color 0.3s;
+        min-height: 100px; /* Adjust the height to make it look good */
+      }
+
+      #profile-info textarea:focus {
+        border-color: #4a90e2;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #fff;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #357abd;
+      }
+
+      #contacts-list,
+      #profile-list,
+      #save-profile {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.9em;
+        color: #666;
+      }
+      /* Style for the Lifecycle Stage dropdown */
+      #profile-lifecyclestage {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 0.95em;
+        transition: border-color 0.3s;
+        background-color: #fff; /* Background color for dropdown */
+        appearance: none; /* Removes default arrow in most browsers */
+      }
+
+      #profile-lifecyclestage:focus {
+        border-color: #4a90e2;
+        outline: none;
+      }
+
+      /* Optional: Add a custom dropdown arrow */
+      #profile-lifecyclestage {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%234a90e2" d="M2 0L0 2h4z"/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px;
+      }
+      #reauthenticateButton {
+        display: none; /* Initially hidden */
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #fff;
+        background-color: #e94f37;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #check-profiles-btn #redirect-contact #save-profile-btn {
+        display: none;
+      }
+
+      #reauthenticateButton:hover {
+        background-color: #c43b2e;
+      }
+      /* Style for the show message */
+      #show-message {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0;
+        color: #4a90e2;
+      }
+
+      /* Style for the notification */
+      #notification {
+        font-size: 1em;
+        color: #e94f37;
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #fbe4e4;
+        border: 1px solid #e94f37;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>LinkedIn Profile</h3>
+    <h1 id="show-message"></h1>
+    <p id="notification"></p>
+
+    <div id="profile-info">
+      <label for="profile-name">Name:</label>
+      <input
+        type="text"
+        id="profile-name"
+        value=""
+        placeholder="Enter the name"
+        disabled
+      />
+      <label for="profile-email">Email:</label>
+      <input
+        type="text"
+        id="profile-email"
+        value=""
+        placeholder="Enter the email"
+      />
+      <label for="profile-headline">Headline:</label>
+
+      <textarea
+        type="text"
+        id="profile-headline"
+        placeholder="Enter profile headline (optional)"
+      ></textarea>
+      <label for="profile-location">Location:</label>
+      <input
+        type="text"
+        id="profile-location"
+        value=""
+        placeholder="Enter the location"
+      />
+      <label for="profile-jobtitle">Job title:</label>
+      <input
+        type="text"
+        id="profile-jobtitle"
+        value=""
+        placeholder="Enter the job Title"
+      />
+      <label for="profile-company">Company:</label>
+      <input
+        type="text"
+        id="profile-company"
+        value=""
+        placeholder="Enter the Company name"
+      />
+      <label for="profile-lifecyclestage">Lifecycle Stage:</label>
+      <select id="profile-lifecyclestage">
+        <option value="subscriber">Subscriber</option>
+        <option value="lead">Lead</option>
+        <option value="marketingqualifiedlead">Marketing Qualified Lead</option>
+        <option value="opportunity">Opportunity</option>
+        <option value="customer">Customer</option>
+        <option value="evangelist">Evangelist</option>
+        <option value="others">Others</option>
+      </select>
+    </div>
+
+    <div id="contacts-list"></div>
+    <button id="save-profile-btn">Create new contact</button>
+
+    <!-- <button id="fetch-all-profiles-btn"  class="hidden">Fetch All Profiles</button> -->
+    <button id="check-profiles-btn">Update Profiles</button>
+    <button id="redirect-contact">Manage your Contacts</button>
+    <div id="profile-list"></div>
+    <button id="reauthenticateButton">Re-login</button>
+    <script src="popup.js"></script>
+  </body>
+</html>
