@@ -1,9 +1,9 @@
 
-# LinkedIn Profile Fetcher Chrome Extension
+# LinkedIn Profile Fetcher  Extension
 
 ## Overview
 
-The LinkedIn Profile Fetcher is a Chrome extension that allows users to fetch and manage LinkedIn profile data and save it to HubSpot CRM. This extension automates the process of retrieving profile information from LinkedIn and integrates it seamlessly with HubSpot.
+The LinkedIn Profile Fetcher is a  extension that allows users to fetch and manage LinkedIn profile data and save it to HubSpot CRM. This extension automates the process of retrieving profile information from LinkedIn and integrates it seamlessly with HubSpot.
 
 ## Features
 
@@ -66,7 +66,7 @@ Contributions are welcome! If you have suggestions or improvements, please submi
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ## Acknowledgments
 
